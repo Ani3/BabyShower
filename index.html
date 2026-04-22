@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Shower — May 9, Lisbon</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Grotesk:wght@300;400;500;600&family=Caveat:wght@400;600&family=Permanent+Marker&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --cream:  #f5e8d4;
+  --tomato: #e84020;
+  --pink:   #e84020;
+  --yellow: #f0c028;
+  --cobalt: #1838d0;
+  --ink:    #1c1408;
+  --olive:  #7a6a18;
+  --teal:   #28906a;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.055;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--pink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 60px;
+}
+
+/* big illustrated citrus slice */
+.hero-art {
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 560px;
+  height: 560px;
+  opacity: 0.22;
+}
+
+/* dot halftone bg */
+.hero-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--cream) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  opacity: 0.12;
+}
+
+.hero-top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 28px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.7;
+}
+
+.hero-badge {
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: 100px;
+}
+
+.hero-body {
+  position: relative;
+  z-index: 2;
+  padding: 0 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: left;
+}
+
+.hero-headline {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(90px, 16vw, 220px);
+  line-height: 0.88;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  margin-bottom: 36px;
+}
+
+.hero-headline span {
+  display: block;
+  color: var(--yellow);
+  font-family: 'Caveat', cursive;
+  font-size: clamp(52px, 8vw, 110px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-meta-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: oklch(85% 0.10 340);
+  font-weight: 500;
+}
+
+.hero-meta-val {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 500;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+
+.hero-divider {
+  width: 1px;
+  height: 40px;
+  background: oklch(85% 0.10 340);
+  opacity: 0.4;
+  align-self: center;
+}
+
+/* ── INVITE ── */
+.invite {
+  background: var(--cream);
+  padding: 100px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.invite-art {
+  position: absolute;
+  right: -30px;
+  bottom: -40px;
+  width: 400px;
+  opacity: 0.12;
+}
+
+.invite-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .invite-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-body { padding: 0 24px; }
+  .invite { padding: 72px 24px; }
+}
+
+.section-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tomato);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-num::before { content:''; display:inline-block; width:24px; height:2px; background:var(--line-color, var(--tomato)); }
+
+.invite-h {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+.invite-h em {
+  font-style: italic;
+  color: var(--tomato);
+}
+
+.invite-p {
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.85;
+  color: #5a5040;
+  font-weight: 300;
+  max-width: 440px;
+}
+.invite-p + .invite-p { margin-top: 16px; }
+
+/* details card — physical ticket feel */
+.ticket {
+  background: var(--yellow);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticket-top {
+  padding: 36px 36px 28px;
+  border-bottom: 2px dashed oklch(78% 0.18 70);
+}
+
+.ticket-bottom {
+  padding: 28px 36px 36px;
+}
+
+.ticket-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.ticket-row:last-child { margin-bottom: 0; }
+
+.ticket-key {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--olive);
+  min-width: 70px;
+  padding-top: 4px;
+}
+
+.ticket-val {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ── EXPECT ── */
+.expect {
+  background: var(--cobalt);
+  padding: 100px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) { .expect { padding: 72px 24px; } }
+
+.expect-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+
+.expect-h {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(60px, 10vw, 130px);
+  line-height: 0.9;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.expect-h em { color: var(--yellow); font-style: italic; }
+
+.expect-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+@media (max-width: 720px) { .expect-items { grid-template-columns: 1fr; } }
+
+.expect-item {
+  background: transparent;
+  padding: 0;
+  border-top: 2px solid oklch(55% 0.20 258);
+  padding-top: 28px;
+}
+
+.expect-item-n {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: oklch(72% 0.12 258);
+  margin-bottom: 20px;
+}
+
+.expect-item-title {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(26px, 3vw, 38px);
+  color: var(--cream);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+  line-height: 1.0;
+}
+
+.expect-item-body {
+  font-size: 14px;
+  color: oklch(78% 0.08 258);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── MARQUEE ── */
+.marquee {
+  background: var(--yellow);
+  overflow: hidden;
+  padding: 16px 0;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: scroll 22s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-word {
+  font-family: 'Abril Fatface', serif;
+  font-size: 24px;
+  color: var(--ink);
+  padding: 0 20px;
+  letter-spacing: -0.01em;
+}
+
+.marquee-sep {
+  color: var(--tomato);
+  font-size: 20px;
+  padding: 0 8px;
+}
+
+/* ── FOOD ── */
+.food {
+  background: var(--tomato);
+  padding: 100px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) { .food { padding: 72px 24px; } }
+
+/* big illustrated pepper bg */
+.food-bg-art {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  opacity: 0.15;
+}
+
+.food-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 720px) { .food-inner { grid-template-columns: 1fr; } }
+
+.food-h {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(60px, 10vw, 120px);
+  line-height: 0.9;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.food-sub {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--yellow);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.food-desc {
+  font-size: clamp(15px, 1.5vw, 17px);
+  color: oklch(90% 0.06 25);
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+/* ── REGISTRY ── */
+.registry {
+  background: var(--cream);
+  padding: 120px 48px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) { .registry { padding: 80px 24px; } }
+
+.registry-art-l {
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  opacity: 0.1;
+}
+
+.registry-art-r {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+  width: 380px;
+  opacity: 0.1;
+}
+
+.registry-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.registry-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.registry-label::before, .registry-label::after {
+  content: '';
+  width: 32px;
+  height: 2px;
+  background: var(--cobalt);
+}
+
+.registry-h {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(60px, 10vw, 120px);
+  line-height: 0.9;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+.registry-p {
+  font-size: clamp(15px, 1.5vw, 18px);
+  color: #5a5040;
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 44px;
+}
+
+.registry-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid var(--cobalt);
+  color: var(--cobalt);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 100px;
+}
+
+.blink-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--pink);
+  animation: blink 1.3s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.1; }
+}
+
+/* ── RSVP ── */
+.rsvp {
+  background: var(--cobalt);
+  padding: 100px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) { .rsvp { padding: 72px 24px; } }
+
+.rsvp-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--cream) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.08;
+}
+
+.rsvp-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.rsvp-h {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(50px, 8vw, 110px);
+  line-height: 0.88;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.rsvp-h em { font-style: italic; color: var(--yellow); }
+
+.rsvp-p {
+  font-size: clamp(15px, 1.5vw, 18px);
+  color: #ffffff;
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 520px;
+  margin-bottom: 44px;
+}
+
+.rsvp-btn {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 18px 48px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.15s;
+}
+
+.rsvp-btn:hover {
+  background: var(--cream);
+  color: var(--cobalt);
+  transform: translateY(-2px);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--cobalt);
+  border-top: 1px solid oklch(42% 0.18 258);
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-left {
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  color: var(--yellow);
+}
+
+.footer-right {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: oklch(42% 0.04 60);
+  font-weight: 500;
+}
+
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#f03a7e">
+  <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="600" fill="#f03a7e"/>
+    <circle cx="580" cy="120" r="220" fill="#e03070" opacity="0.5"/>
+    <text x="80" y="220" font-family="serif" font-size="130" font-weight="bold" fill="#f3ede2" opacity="0.95">Baby</text>
+    <text x="80" y="360" font-family="serif" font-size="130" font-weight="bold" fill="#f0c62e" opacity="0.95">Shower</text>
+    <rect x="80" y="400" width="320" height="3" fill="#f3ede2" opacity="0.4"/>
+    <text x="80" y="440" font-family="sans-serif" font-size="28" fill="#f3ede2" opacity="0.7">May 9 · Parque Eduardo VII · Lisbon</text>
+  </svg>
+</template>
+</head>
+<body>
+
+<!-- ░░ HERO ░░ -->
+<section class="hero">
+  <div class="hero-dots"></div>
+
+  <!-- PAPAYA cross-section — right side, large, risograph style -->
+  <svg class="hero-art" viewBox="0 0 480 560" xmlns="http://www.w3.org/2000/svg" style="top:-40px;right:-60px;width:520px;opacity:0.32;">
+    <!-- shadow -->
+    <ellipse cx="260" cy="510" rx="160" ry="28" fill="#2848d8" opacity="0.5"/>
+    <!-- outer skin -->
+    <path d="M240 20 C340 20 420 100 430 230 C440 360 390 480 240 520 C90 480 40 360 50 230 C60 100 140 20 240 20Z" fill="#f0c62e"/>
+    <!-- inner flesh -->
+    <path d="M240 70 C310 70 370 130 378 230 C386 330 350 430 240 460 C130 430 94 330 102 230 C110 130 170 70 240 70Z" fill="#f03a7e"/>
+    <!-- seed cavity -->
+    <ellipse cx="240" cy="265" rx="72" ry="130" fill="#c03020" opacity="0.7"/>
+    <!-- seeds -->
+    <g fill="#1c1408">
+      <ellipse cx="230" cy="195" rx="7" ry="9" transform="rotate(-10 230 195)"/>
+      <ellipse cx="252" cy="208" rx="7" ry="9" transform="rotate(8 252 208)"/>
+      <ellipse cx="238" cy="225" rx="7" ry="9" transform="rotate(-5 238 225)"/>
+      <ellipse cx="222" cy="242" rx="7" ry="9" transform="rotate(12 222 242)"/>
+      <ellipse cx="256" cy="238" rx="7" ry="9" transform="rotate(-8 256 238)"/>
+      <ellipse cx="232" cy="260" rx="7" ry="9" transform="rotate(5 232 260)"/>
+      <ellipse cx="252" cy="272" rx="7" ry="9" transform="rotate(-12 252 272)"/>
+      <ellipse cx="228" cy="284" rx="7" ry="9" transform="rotate(8 228 284)"/>
+      <ellipse cx="248" cy="298" rx="7" ry="9" transform="rotate(-6 248 298)"/>
+      <ellipse cx="232" cy="314" rx="7" ry="9" transform="rotate(10 232 314)"/>
+      <ellipse cx="254" cy="324" rx="7" ry="9" transform="rotate(-4 254 324)"/>
+    </g>
+    <!-- highlight line -->
+    <path d="M190 90 Q168 200 175 340" stroke="#f3ede2" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  </svg>
+
+  <!-- LEMON with leaf — bottom left -->
+  <svg style="position:absolute;left:-20px;bottom:40px;width:200px;opacity:0.28;transform:rotate(-18deg);" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+    <!-- leaf -->
+    <path d="M80 30 Q120 0 160 20 Q140 60 80 30Z" fill="#3d7a28"/>
+    <path d="M80 30 Q120 10 155 22" stroke="#2a5a1a" stroke-width="2" fill="none"/>
+    <!-- stem -->
+    <line x1="100" y1="55" x2="100" y2="80" stroke="#3d7a28" stroke-width="5" stroke-linecap="round"/>
+    <!-- lemon body -->
+    <path d="M100 80 C58 80 28 110 28 148 C28 186 58 216 100 216 C142 216 172 186 172 148 C172 110 142 80 100 80Z" fill="#f0c62e"/>
+    <!-- tip -->
+    <path d="M100 80 Q88 62 86 50" stroke="#f0c62e" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M100 216 Q112 228 114 238" stroke="#f0c62e" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <!-- highlight -->
+    <path d="M60 105 Q50 135 55 165" stroke="#f3ede2" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </svg>
+
+  <!-- small tomato cluster top-left -->
+  <svg style="position:absolute;left:52%;top:12px;width:90px;opacity:0.20;transform:rotate(10deg);" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="70" r="44" fill="#e8402a"/>
+    <g fill="#3d7a28">
+      <path d="M60 26 Q70 10 80 14 Q72 28 60 26Z"/>
+      <path d="M60 26 Q50 10 40 14 Q48 28 60 26Z"/>
+      <path d="M60 26 Q64 8 60 2 Q56 8 60 26Z"/>
+    </g>
+    <!-- highlight -->
+    <circle cx="44" cy="52" r="8" fill="#f3ede2" opacity="0.3"/>
+  </svg>
+
+
+
+  <div class="hero-body">
+    <h1 class="hero-headline" style="font-family:'Architects Daughter',cursive">
+      Baby<br>Shower
+      <span style="font-family:'Architects Daughter',cursive">for our baby boy</span>
+    </h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Date</span>
+        <span class="hero-meta-val">Saturday, May 9</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Time</span>
+        <span class="hero-meta-val">Early Afternoon</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Where</span>
+        <span class="hero-meta-val">Parque Eduardo VII, Lisbon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ INVITE ░░ -->
+<section class="invite">
+  <!-- TOMATOES ON VINE — right side -->
+  <svg class="invite-art" viewBox="0 0 340 500" xmlns="http://www.w3.org/2000/svg" style="width:320px;bottom:-20px;right:-20px;opacity:0.13;">
+    <!-- vine -->
+    <path d="M170 20 Q155 80 145 130 Q130 180 140 230 Q150 280 135 340 Q125 390 140 450" stroke="#3d7a28" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <!-- tomato 1 -->
+    <circle cx="100" cy="110" r="52" fill="#e8402a"/>
+    <g fill="#3d7a28">
+      <path d="M100 58 Q114 40 126 46 Q116 62 100 58Z"/>
+      <path d="M100 58 Q86 40 74 46 Q84 62 100 58Z"/>
+      <path d="M100 58 Q106 38 100 30 Q94 38 100 58Z"/>
+      <path d="M100 58 Q118 44 122 52 Q110 64 100 58Z"/>
+      <path d="M100 58 Q82 44 78 52 Q90 64 100 58Z"/>
+    </g>
+    <circle cx="84" cy="90" r="10" fill="#f3ede2" opacity="0.25"/>
+    <!-- tomato 2 -->
+    <circle cx="200" cy="200" r="60" fill="#e8402a"/>
+    <g fill="#3d7a28">
+      <path d="M200 140 Q216 120 230 126 Q218 144 200 140Z"/>
+      <path d="M200 140 Q184 120 170 126 Q182 144 200 140Z"/>
+      <path d="M200 140 Q207 118 200 110 Q193 118 200 140Z"/>
+      <path d="M200 140 Q220 126 224 136 Q210 148 200 140Z"/>
+      <path d="M200 140 Q180 126 176 136 Q190 148 200 140Z"/>
+    </g>
+    <circle cx="182" cy="176" r="12" fill="#f3ede2" opacity="0.25"/>
+    <!-- tomato 3 -->
+    <circle cx="120" cy="330" r="46" fill="#e8402a"/>
+    <g fill="#3d7a28">
+      <path d="M120 284 Q132 268 142 273 Q134 287 120 284Z"/>
+      <path d="M120 284 Q108 268 98 273 Q106 287 120 284Z"/>
+      <path d="M120 284 Q125 266 120 259 Q115 266 120 284Z"/>
+    </g>
+    <circle cx="106" cy="312" r="9" fill="#f3ede2" opacity="0.25"/>
+    <!-- small cherry tomato -->
+    <circle cx="210" cy="390" r="30" fill="#e8402a"/>
+    <g fill="#3d7a28">
+      <path d="M210 360 Q218 350 224 353 Q218 362 210 360Z"/>
+      <path d="M210 360 Q202 350 196 353 Q202 362 210 360Z"/>
+    </g>
+  </svg>
+
+  <div class="invite-inner">
+    <div>
+      <div class="section-num" style="font-family:'Architects Daughter',cursive">The Invitation</div>
+      <h2 class="invite-h" style="font-family:'Architects Daughter',cursive">Come<br>celebrate<br><em>with us</em></h2>
+      <p class="invite-p">A new little soul is arriving in mid-June and we want to celebrate him with our Lisbon family.</p>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-top">
+        <div class="ticket-row">
+          <span class="ticket-key">When</span>
+          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">Saturday, May 9, 2026</span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-key">Time</span>
+          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">Early Afternoon</span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-key">Where</span>
+          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">Parque Eduardo VII, Lisbon</span>
+        </div>
+      </div>
+      <div class="ticket-bottom">
+        <div class="ticket-row">
+          <span class="ticket-key">RSVP by</span>
+          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">May 3, 2026</span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-key">Guest of Honor</span>
+          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">Baby Boy ✦ Arriving Mid-June</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ░░ WHAT TO EXPECT ░░ -->
+<section class="expect">
+  <div class="expect-inner">
+    <!-- CHILI PEPPERS — right side decoration -->
+    <svg style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:160px;opacity:0.12;" viewBox="0 0 160 420" xmlns="http://www.w3.org/2000/svg">
+      <!-- pepper 1 -->
+      <path d="M80 30 Q100 80 98 160 Q96 220 84 260 C78 285 70 285 64 260 Q52 220 50 160 Q48 80 68 30 Q74 20 80 30Z" fill="#e8402a" transform="rotate(-12 80 200)"/>
+      <path d="M80 30 Q88 10 84 0" stroke="#3d7a28" stroke-width="6" fill="none" stroke-linecap="round" transform="rotate(-12 80 200)"/>
+      <path d="M80 30 Q92 22 102 26" stroke="#3d7a28" stroke-width="5" fill="none" stroke-linecap="round" transform="rotate(-12 80 200)"/>
+      <!-- pepper 2 -->
+      <path d="M110 120 Q126 165 124 228 Q122 275 112 305 C107 326 100 326 95 305 Q85 275 83 228 Q81 165 97 120 Q103 112 110 120Z" fill="#f0c62e" transform="rotate(15 100 240)"/>
+      <path d="M110 120 Q116 104 113 94" stroke="#3d7a28" stroke-width="5" fill="none" stroke-linecap="round" transform="rotate(15 100 240)"/>
+    </svg>
+    <h2 class="expect-h" style="font-family:'Architects Daughter',cursive">What to<br><em>expect</em></h2>
+    <div class="expect-items">
+      <div class="expect-item">
+        <div class="expect-item-n">01 — Food</div>
+        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive">A Mexican Feast</div>
+        <div class="expect-item-body">Bold, vibrant, generous. A full spread of Mexican cuisine.</div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-item-n">02 — Sweets</div>
+        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive">Special Cake</div>
+        <div class="expect-item-body">The centrepiece of the afternoon — made with intention and a lot of love.</div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-item-n">03 — Vibes</div>
+        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive">Great Company</div>
+        <div class="expect-item-body">Warm company of old and new friends sharing the joy of the first baby shower in our lives!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- food section removed -->
+<section class="food" style="display:none;height:0;overflow:hidden">
+  <!-- big pepper illustration -->
+  <svg class="food-bg-art" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
+    <path d="M200 480 C120 460 60 380 50 280 C40 160 100 60 200 40 C300 60 360 160 350 280 C340 380 280 460 200 480Z" fill="#f3ede2"/>
+    <path d="M200 40 Q215 10 210 -10" stroke="#3d7a28" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <ellipse cx="208" cy="25" rx="22" ry="10" fill="#3d7a28" transform="rotate(-20 208 25)"/>
+    <ellipse cx="160" cy="240" rx="80" ry="160" fill="#c03020" opacity="0.35"/>
+  </svg>
+
+  <div class="food-inner">
+    <div>
+      <div class="section-num" style="color:var(--yellow)">The Menu</div>
+      <h2 class="food-h" style="font-family:'Permanent Marker',cursive">The<br>Food</h2>
+      <p class="food-sub">Mexican cuisine</p>
+    </div>
+    <p class="food-desc">
+      The food is the heart of this afternoon. We've brought in a chef whose work turns every meal into a memory — expect bold Mexican flavours, vibrant plates, and the kind of food that makes you want to stay at the table for hours.<br><br>
+      Alongside the feast, a stunning cake from one of Lisbon's best pastry makers — because this moment deserves something truly special.
+    </p>
+  </div>
+</section>
+
+<!-- ░░ REGISTRY ░░ -->
+<section class="registry">
+  <!-- LEMONS left -->
+  <svg class="registry-art-l" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" style="width:300px;opacity:0.13;">
+    <!-- big lemon -->
+    <path d="M150 60 C108 60 76 92 76 134 C76 176 108 208 150 208 C192 208 224 176 224 134 C224 92 192 60 150 60Z" fill="#f0c62e"/>
+    <path d="M150 60 Q138 42 136 28" stroke="#f0c62e" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M150 208 Q162 222 163 234" stroke="#f0c62e" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M130 240 Q160 218 190 238 Q172 270 130 240Z" fill="#3d7a28"/>
+    <!-- small lemon -->
+    <path d="M80 310 C56 310 38 328 38 352 C38 376 56 394 80 394 C104 394 122 376 122 352 C122 328 104 310 80 310Z" fill="#f0c62e"/>
+    <path d="M80 310 Q73 298 72 290" stroke="#f0c62e" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M60 400 Q80 386 100 400 Q88 418 60 400Z" fill="#3d7a28"/>
+    <!-- artichoke -->
+    <g transform="translate(160,320)">
+      <ellipse cx="60" cy="80" rx="26" ry="50" fill="#3d7a28"/>
+      <path d="M60 50 Q38 40 34 55 Q44 70 60 50Z" fill="#4a9a36"/>
+      <path d="M60 50 Q82 40 86 55 Q76 70 60 50Z" fill="#4a9a36"/>
+      <path d="M60 60 Q34 54 32 70 Q44 82 60 60Z" fill="#3d7a28"/>
+      <path d="M60 60 Q86 54 88 70 Q76 82 60 60Z" fill="#3d7a28"/>
+      <path d="M60 72 Q36 68 36 84 Q48 94 60 72Z" fill="#4a9a36"/>
+      <path d="M60 72 Q84 68 84 84 Q72 94 60 72Z" fill="#4a9a36"/>
+      <path d="M60 84 Q38 82 40 98 Q52 106 60 84Z" fill="#3d7a28"/>
+      <path d="M60 84 Q82 82 80 98 Q68 106 60 84Z" fill="#3d7a28"/>
+      <rect x="54" y="120" width="12" height="32" fill="#3d7a28" rx="4"/>
+    </g>
+  </svg>
+  <!-- CITRUS HALF right -->
+  <svg class="registry-art-r" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" style="width:300px;opacity:0.13;">
+    <!-- citrus half cut -->
+    <path d="M150 80 C90 80 40 130 40 190 C40 250 90 300 150 300 L150 80Z" fill="#e8402a"/>
+    <!-- segments -->
+    <path d="M150 80 L150 300" stroke="#f3ede2" stroke-width="3" opacity="0.6"/>
+    <path d="M150 190 L42 160" stroke="#f3ede2" stroke-width="2.5" opacity="0.5"/>
+    <path d="M150 190 L48 220" stroke="#f3ede2" stroke-width="2.5" opacity="0.5"/>
+    <path d="M150 190 L70 256" stroke="#f3ede2" stroke-width="2.5" opacity="0.5"/>
+    <path d="M150 190 L108 286" stroke="#f3ede2" stroke-width="2.5" opacity="0.5"/>
+    <circle cx="150" cy="190" r="28" fill="#f03a7e" opacity="0.6"/>
+    <!-- peel edge -->
+    <path d="M150 80 C90 80 40 130 40 190 C40 250 90 300 150 300" fill="none" stroke="#f0c62e" stroke-width="12"/>
+    <!-- lemon below -->
+    <path d="M80 360 C56 360 38 382 38 406 C38 430 56 452 80 452 C104 452 122 430 122 406 C122 382 104 360 80 360Z" fill="#f0c62e"/>
+    <path d="M80 360 Q72 346 70 334" stroke="#f0c62e" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M58 456 Q80 442 102 456 Q90 474 58 456Z" fill="#3d7a28"/>
+  </svg>
+
+  <div class="registry-inner">
+    <div class="registry-label" style="font-family:'Architects Daughter',cursive">Baby Registry</div>
+    <h2 class="registry-h" style="font-family:'Architects Daughter',cursive">Coming<br>Soon</h2>
+    <p class="registry-p">We're putting together a thoughtful list of remaining items for our baby.<br>We'll share the link right here very soon!</p>
+    <div class="registry-pill">
+      <span class="blink-dot"></span>
+      Baby Registry dropping soon
+    </div>
+  </div>
+</section>
+
+<!-- ░░ RSVP ░░ -->
+<section class="rsvp">
+  <div class="rsvp-dots"></div>
+  <div class="rsvp-inner">
+    <div class="section-num" style="color:#ffffff;--line-color:var(--pink);font-family:'Architects Daughter',cursive">Let us know</div>
+    <h2 class="rsvp-h" style="font-family:'Architects Daughter',cursive">RSVP<br><em>by May 3</em></h2>
+    <p class="rsvp-p">Please let us know you're coming — we'd love to plan the amount of food and drinks in advance.</p>
+    <a href="/cdn-cgi/l/email-protection#1d6f6e6b6d5d78657c706d7178337e7270" class="rsvp-btn">Send your RSVP</a>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <div class="footer-left">See you on May 9th ☀</div>
+  <div class="footer-right">Baby Boy · Arriving Mid-June 2026 · Lisbon</div>
+</footer>
+
+<!-- TWEAKS -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "primaryColor": "#f03a7e",
+  "showRegistry": true
+}/*EDITMODE-END*/;
+
+const panel = document.createElement('div');
+panel.style.cssText = `position:fixed;bottom:24px;right:24px;z-index:9999;background:#fff;border-radius:16px;padding:22px;box-shadow:0 8px 40px rgba(0,0,0,0.14);width:260px;font-family:'Space Grotesk',sans-serif;display:none;border:1px solid #eee;`;
+panel.innerHTML = `<div style="font-weight:600;font-size:13px;margin-bottom:18px;letter-spacing:0.1em;text-transform:uppercase;">Tweaks</div>
+  <label style="display:block;font-size:11px;font-weight:600;color:#888;margin-bottom:6px;letter-spacing:0.12em;text-transform:uppercase;">Hero Color</label>
+  <input id="tw-pink" type="color" value="#f03a7e" style="width:100%;height:36px;border:none;cursor:pointer;border-radius:8px;margin-bottom:14px;">
+  <label style="display:block;font-size:11px;font-weight:600;color:#888;margin-bottom:6px;letter-spacing:0.12em;text-transform:uppercase;">Show Registry</label>
+  <input id="tw-reg" type="checkbox" checked style="width:18px;height:18px;cursor:pointer;">`;
+document.body.appendChild(panel);
+
+document.getElementById('tw-pink').addEventListener('input', e => {
+  document.querySelector('.hero').style.background = e.target.value;
+});
+document.getElementById('tw-reg').addEventListener('change', e => {
+  document.querySelector('.registry').style.display = e.target.checked ? '' : 'none';
+});
+
+window.addEventListener('message', e => {
+  if (e.data?.type === '__activate_edit_mode')   panel.style.display = 'block';
+  if (e.data?.type === '__deactivate_edit_mode') panel.style.display = 'none';
+});
+window.parent.postMessage({type: '__edit_mode_available'}, '*');
+</script>
+
+</body>
+</html>
