@@ -7,14 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Grotesk:wght@300;400;500;600&family=Caveat:wght@400;600&family=Permanent+Marker&family=Architects+Daughter&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
+em { font-style: normal; }
 html { scroll-behavior: smooth; }
 
 :root {
   --cream:  #f5e8d4;
   --tomato: #e84020;
   --pink:   #e84020;
-  --yellow: #f0c028;
-  --cobalt: #1838d0;
+  --yellow: #F4C431;
+  --cobalt: #1034A6;
   --ink:    #1c1408;
   --olive:  #7a6a18;
   --teal:   #28906a;
@@ -126,6 +127,7 @@ body::after {
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.01em;
+  font-style: normal;
 }
 
 .hero-meta {
@@ -218,8 +220,7 @@ body::after {
 }
 
 .invite-h em {
-  font-style: italic;
-  color: var(--tomato);
+  font-style: normal;
 }
 
 .invite-p {
@@ -296,7 +297,7 @@ body::after {
   text-align: center;
 }
 
-.expect-h em { color: var(--yellow); font-style: italic; }
+.expect-h em { color: var(--yellow); font-style: normal; }
 
 .expect-items {
   display: grid;
@@ -813,7 +814,7 @@ footer {
       <path d="M110 120 Q126 165 124 228 Q122 275 112 305 C107 326 100 326 95 305 Q85 275 83 228 Q81 165 97 120 Q103 112 110 120Z" fill="#f0c62e" transform="rotate(15 100 240)"/>
       <path d="M110 120 Q116 104 113 94" stroke="#3d7a28" stroke-width="5" fill="none" stroke-linecap="round" transform="rotate(15 100 240)"/>
     </svg>
-    <h2 class="expect-h" style="font-family:'Architects Daughter',cursive">What to<br><em>expect</em></h2>
+    <h2 class="expect-h" style="font-family:'Architects Daughter',cursive;color:var(--yellow)">What to<br>expect</h2>
     <div class="expect-items">
       <div class="expect-item">
         <div class="expect-item-n">01 — Food</div>
