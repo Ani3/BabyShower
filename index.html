@@ -14,7 +14,7 @@ html { scroll-behavior: smooth; }
   --cream:  #f5e8d4;
   --tomato: #e84020;
   --pink:   #e84020;
-  --yellow: #F4C431;
+  --yellow: #FADA5E;
   --cobalt: #1034A6;
   --ink:    #1c1408;
   --olive:  #7a6a18;
@@ -41,14 +41,14 @@ body::after {
 
 /* ── HERO ── */
 .hero {
-  background: var(--pink);
+  background: var(--tomato);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 0 0 60px;
+  padding: 60px 0;
 }
 
 /* big illustrated citrus slice */
@@ -107,6 +107,9 @@ body::after {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-align: left;
 }
 
@@ -147,8 +150,19 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: oklch(85% 0.10 340);
-  font-weight: 500;
+  color: var(--yellow);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-meta-label::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: var(--yellow);
+  flex-shrink: 0;
 }
 
 .hero-meta-val {
@@ -285,7 +299,7 @@ body::after {
 
 @media (max-width: 720px) { .expect { padding: 72px 24px; } }
 
-.expect-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.expect-inner { max-width: 1100px; margin: 0 auto; position: relative; width: 100%; }
 
 .expect-h {
   font-family: 'Abril Fatface', serif;
@@ -310,8 +324,19 @@ body::after {
 .expect-item {
   background: transparent;
   padding: 0;
-  border-top: 2px solid oklch(55% 0.20 258);
   padding-top: 28px;
+  position: relative;
+}
+
+.expect-item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8'%3E%3Cpath d='M0 4 Q5 0 10 4 Q15 8 20 4 Q25 0 30 4 Q35 8 40 4' fill='none' stroke='%23FADA5E' stroke-width='2'/%3E%3C/svg%3E") repeat-x left center;
 }
 
 .expect-item-n {
@@ -334,7 +359,7 @@ body::after {
 
 .expect-item-body {
   font-size: 14px;
-  color: oklch(78% 0.08 258);
+  color: #ffffff;
   line-height: 1.7;
   font-weight: 300;
 }
@@ -450,7 +475,7 @@ body::after {
 
 .registry-art-r {
   position: absolute;
-  right: -80px;
+  right: -20px;
   top: 50%;
   transform: translateY(-50%) scaleX(-1);
   width: 380px;
@@ -552,7 +577,7 @@ body::after {
   z-index: 2;
   max-width: 1100px;
   margin: 0 auto;
-  text-align: left;
+  width: 100%;
 }
 
 .rsvp-h {
@@ -577,8 +602,8 @@ body::after {
 
 .rsvp-btn {
   display: inline-block;
-  background: var(--yellow);
-  color: var(--ink);
+  background: var(--tomato);
+  color: var(--cream);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -601,7 +626,7 @@ footer {
   border-top: 1px solid oklch(42% 0.18 258);
   padding: 32px 48px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
@@ -640,7 +665,7 @@ footer {
   <div class="hero-dots"></div>
 
   <!-- PAPAYA cross-section — right side, large, risograph style -->
-  <svg class="hero-art" viewBox="0 0 480 560" xmlns="http://www.w3.org/2000/svg" style="top:-40px;right:-60px;width:520px;opacity:0.32;">
+  <svg class="hero-art" viewBox="0 0 480 560" xmlns="http://www.w3.org/2000/svg" style="top:-40px;right:-60px;width:520px;opacity:0.80;">
     <!-- shadow -->
     <ellipse cx="260" cy="510" rx="160" ry="28" fill="#2848d8" opacity="0.5"/>
     <!-- outer skin -->
@@ -667,8 +692,10 @@ footer {
     <path d="M190 90 Q168 200 175 340" stroke="#f3ede2" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.5"/>
   </svg>
 
+
+
   <!-- LEMON with leaf — bottom left -->
-  <svg style="position:absolute;left:-20px;bottom:40px;width:200px;opacity:0.28;transform:rotate(-18deg);" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+  <svg style="position:absolute;left:-20px;bottom:40px;width:200px;opacity:0.75;transform:rotate(-18deg);" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
     <!-- leaf -->
     <path d="M80 30 Q120 0 160 20 Q140 60 80 30Z" fill="#3d7a28"/>
     <path d="M80 30 Q120 10 155 22" stroke="#2a5a1a" stroke-width="2" fill="none"/>
@@ -682,9 +709,7 @@ footer {
     <!-- highlight -->
     <path d="M60 105 Q50 135 55 165" stroke="#f3ede2" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
   </svg>
-
-  <!-- small tomato cluster top-left -->
-  <svg style="position:absolute;left:52%;top:12px;width:90px;opacity:0.20;transform:rotate(10deg);" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <svg style="position:absolute;left:52%;top:12px;width:90px;opacity:0.60;transform:rotate(10deg);" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
     <circle cx="60" cy="70" r="44" fill="#e8402a"/>
     <g fill="#3d7a28">
       <path d="M60 26 Q70 10 80 14 Q72 28 60 26Z"/>
@@ -697,6 +722,7 @@ footer {
 
 
 
+
   <div class="hero-body">
     <h1 class="hero-headline" style="font-family:'Architects Daughter',cursive">
       Baby<br>Shower
@@ -704,27 +730,44 @@ footer {
     </h1>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <span class="hero-meta-label">Date</span>
+        <span class="hero-meta-label" style="font-family:'Architects Daughter',cursive">Date</span>
         <span class="hero-meta-val">Saturday, May 9</span>
       </div>
       <div class="hero-divider"></div>
       <div class="hero-meta-item">
-        <span class="hero-meta-label">Time</span>
-        <span class="hero-meta-val">Early Afternoon</span>
+        <span class="hero-meta-label" style="font-family:'Architects Daughter',cursive">Time</span>
+        <span class="hero-meta-val">3:00 PM</span>
       </div>
       <div class="hero-divider"></div>
       <div class="hero-meta-item">
-        <span class="hero-meta-label">Where</span>
+        <span class="hero-meta-label" style="font-family:'Architects Daughter',cursive">Where</span>
         <span class="hero-meta-val">Parque Eduardo VII, Lisbon</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ░░ INVITE ░░ -->
+  <!-- CITRUS SLICE — top right corner, non-overlapping -->
+  <svg style="position:absolute;right:20px;top:20px;width:120px;opacity:0.60;pointer-events:none;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="94" fill="#FADA5E"/>
+    <circle cx="100" cy="100" r="78" fill="#f5e8d4" opacity="0.9"/>
+    <circle cx="100" cy="100" r="32" fill="#FADA5E" opacity="0.8"/>
+    <g stroke="#FADA5E" stroke-width="3" opacity="0.7">
+      <line x1="100" y1="22" x2="100" y2="68"/>
+      <line x1="100" y1="132" x2="100" y2="178"/>
+      <line x1="22" y1="100" x2="68" y2="100"/>
+      <line x1="132" y1="100" x2="178" y2="100"/>
+      <line x1="44" y1="44" x2="76" y2="76"/>
+      <line x1="124" y1="124" x2="156" y2="156"/>
+      <line x1="156" y1="44" x2="124" y2="76"/>
+      <line x1="76" y1="124" x2="44" y2="156"/>
+    </g>
+    <circle cx="100" cy="100" r="94" fill="none" stroke="#FADA5E" stroke-width="6"/>
+  </svg>
+  <!-- INVITE ░░ -->
 <section class="invite">
   <!-- TOMATOES ON VINE — right side -->
-  <svg class="invite-art" viewBox="0 0 340 500" xmlns="http://www.w3.org/2000/svg" style="width:320px;bottom:-20px;right:-20px;opacity:0.13;">
+  <svg class="invite-art" viewBox="0 0 340 500" xmlns="http://www.w3.org/2000/svg" style="width:320px;bottom:-20px;right:-20px;opacity:0.45;">
     <!-- vine -->
     <path d="M170 20 Q155 80 145 130 Q130 180 140 230 Q150 280 135 340 Q125 390 140 450" stroke="#3d7a28" stroke-width="10" fill="none" stroke-linecap="round"/>
     <!-- tomato 1 -->
@@ -778,7 +821,7 @@ footer {
         </div>
         <div class="ticket-row">
           <span class="ticket-key">Time</span>
-          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">Early Afternoon</span>
+          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">3:00 PM</span>
         </div>
         <div class="ticket-row">
           <span class="ticket-key">Where</span>
@@ -788,7 +831,7 @@ footer {
       <div class="ticket-bottom">
         <div class="ticket-row">
           <span class="ticket-key">RSVP by</span>
-          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">May 3, 2026</span>
+          <span class="ticket-val" style="font-family:'Architects Daughter',cursive">May 5, 2026</span>
         </div>
         <div class="ticket-row">
           <span class="ticket-key">Guest of Honor</span>
@@ -804,8 +847,15 @@ footer {
 <!-- ░░ WHAT TO EXPECT ░░ -->
 <section class="expect">
   <div class="expect-inner">
+    <!-- AVOCADO HALF — top left of expect section -->
+    <svg style="position:absolute;left:0;top:0;width:130px;opacity:0.55;transform:rotate(15deg);pointer-events:none;" viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg">
+      <path d="M80 10 C40 10 14 50 14 100 C14 160 44 210 80 210 C116 210 146 160 146 100 C146 50 120 10 80 10Z" fill="#3d7a28"/>
+      <path d="M80 30 C52 30 32 62 32 100 C32 148 54 192 80 192 C106 192 128 148 128 100 C128 62 108 30 80 30Z" fill="#8bc34a"/>
+      <ellipse cx="80" cy="115" rx="30" ry="36" fill="#7a3d10"/>
+      <ellipse cx="74" cy="108" rx="10" ry="12" fill="#9a5a28" opacity="0.5"/>
+    </svg>
     <!-- CHILI PEPPERS — right side decoration -->
-    <svg style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:160px;opacity:0.12;" viewBox="0 0 160 420" xmlns="http://www.w3.org/2000/svg">
+    <svg style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:160px;opacity:0.45;" viewBox="0 0 160 420" xmlns="http://www.w3.org/2000/svg">
       <!-- pepper 1 -->
       <path d="M80 30 Q100 80 98 160 Q96 220 84 260 C78 285 70 285 64 260 Q52 220 50 160 Q48 80 68 30 Q74 20 80 30Z" fill="#e8402a" transform="rotate(-12 80 200)"/>
       <path d="M80 30 Q88 10 84 0" stroke="#3d7a28" stroke-width="6" fill="none" stroke-linecap="round" transform="rotate(-12 80 200)"/>
@@ -817,18 +867,18 @@ footer {
     <h2 class="expect-h" style="font-family:'Architects Daughter',cursive;color:var(--yellow)">What to<br>expect</h2>
     <div class="expect-items">
       <div class="expect-item">
-        <div class="expect-item-n">01 — Food</div>
-        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive">A Mexican Feast</div>
+        <div class="section-num" style="font-family:'Architects Daughter',cursive;color:var(--yellow);--line-color:var(--yellow)">Food</div>
+        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive;color:var(--tomato)">A Mexican Feast</div>
         <div class="expect-item-body">Bold, vibrant, generous. A full spread of Mexican cuisine.</div>
       </div>
       <div class="expect-item">
-        <div class="expect-item-n">02 — Sweets</div>
-        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive">Special Cake</div>
+        <div class="section-num" style="font-family:'Architects Daughter',cursive;color:var(--yellow);--line-color:var(--yellow)">Sweets</div>
+        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive;color:var(--tomato)">Special Cake</div>
         <div class="expect-item-body">The centrepiece of the afternoon — made with intention and a lot of love.</div>
       </div>
       <div class="expect-item">
-        <div class="expect-item-n">03 — Vibes</div>
-        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive">Great Company</div>
+        <div class="section-num" style="font-family:'Architects Daughter',cursive;color:var(--yellow);--line-color:var(--yellow)">Vibes</div>
+        <div class="expect-item-title" style="font-family:'Architects Daughter',cursive;color:var(--tomato)">Great Company</div>
         <div class="expect-item-body">Warm company of old and new friends sharing the joy of the first baby shower in our lives!</div>
       </div>
     </div>
@@ -861,7 +911,7 @@ footer {
 <!-- ░░ REGISTRY ░░ -->
 <section class="registry">
   <!-- LEMONS left -->
-  <svg class="registry-art-l" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" style="width:300px;opacity:0.13;">
+  <svg class="registry-art-l" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" style="width:300px;opacity:0.45;">
     <!-- big lemon -->
     <path d="M150 60 C108 60 76 92 76 134 C76 176 108 208 150 208 C192 208 224 176 224 134 C224 92 192 60 150 60Z" fill="#f0c62e"/>
     <path d="M150 60 Q138 42 136 28" stroke="#f0c62e" stroke-width="9" fill="none" stroke-linecap="round"/>
@@ -886,7 +936,7 @@ footer {
     </g>
   </svg>
   <!-- CITRUS HALF right -->
-  <svg class="registry-art-r" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" style="width:300px;opacity:0.13;">
+  <svg class="registry-art-r" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" style="width:300px;opacity:0.45;">
     <!-- citrus half cut -->
     <path d="M150 80 C90 80 40 130 40 190 C40 250 90 300 150 300 L150 80Z" fill="#e8402a"/>
     <!-- segments -->
@@ -905,22 +955,46 @@ footer {
   </svg>
 
   <div class="registry-inner">
-    <div class="registry-label" style="font-family:'Architects Daughter',cursive">Baby Registry</div>
-    <h2 class="registry-h" style="font-family:'Architects Daughter',cursive">Coming<br>Soon</h2>
-    <p class="registry-p">We're putting together a thoughtful list of remaining items for our baby.<br>We'll share the link right here very soon!</p>
-    <div class="registry-pill">
+
+    <h2 class="registry-h" style="font-family:'Architects Daughter',cursive;margin-bottom:40px;">Baby<br>Registry</h2>
+    <p class="registry-p">We've put together a list of everything our baby will need — if you wish to get anything, you can take a look and pick something you like!</p>
+    <a href="https://www.amazon.es/baby-reg/wael-chams-ani-abgaryan-june-2026-lisboa/2T3RIO96WODBP" target="_blank" class="registry-pill" style="text-decoration:none;cursor:pointer;">
       <span class="blink-dot"></span>
-      Baby Registry dropping soon
-    </div>
+      View Baby Registry
+    </a>
   </div>
 </section>
 
 <!-- ░░ RSVP ░░ -->
 <section class="rsvp">
-  <div class="rsvp-dots"></div>
+  <!-- WATERMELON SLICE — bottom right, non-overlapping -->
+  <svg style="position:absolute;right:20px;bottom:20px;width:480px;opacity:0.65;pointer-events:none;" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+    <!-- rind -->
+    <path d="M20 130 Q120 0 220 130Z" fill="#3d7a28"/>
+    <!-- white layer -->
+    <path d="M34 130 Q120 16 206 130Z" fill="#f5e8d4"/>
+    <!-- flesh -->
+    <path d="M46 130 Q120 28 194 130Z" fill="#e84020"/>
+    <!-- seeds -->
+    <g fill="#1c1408">
+      <ellipse cx="90" cy="100" rx="5" ry="7" transform="rotate(-20 90 100)"/>
+      <ellipse cx="120" cy="80" rx="5" ry="7" transform="rotate(10 120 80)"/>
+      <ellipse cx="150" cy="100" rx="5" ry="7" transform="rotate(20 150 100)"/>
+      <ellipse cx="105" cy="112" rx="4" ry="6" transform="rotate(-5 105 112)"/>
+      <ellipse cx="136" cy="112" rx="4" ry="6" transform="rotate(15 136 112)"/>
+    </g>
+  </svg>
+  <!-- SMALL LEMON — top left, non-overlapping -->
+  <svg style="position:absolute;left:30px;top:30px;width:100px;opacity:0.65;transform:rotate(-20deg);pointer-events:none;" viewBox="0 0 140 180" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 20 C36 20 10 52 10 90 C10 128 36 160 70 160 C104 160 130 128 130 90 C130 52 104 20 70 20Z" fill="#FADA5E"/>
+    <path d="M70 20 Q60 6 58 -4" stroke="#FADA5E" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M70 160 Q80 172 82 180" stroke="#FADA5E" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M48 166 Q70 154 92 166 Q80 182 48 166Z" fill="#3d7a28"/>
+    <path d="M46 54 Q36 76 40 102" stroke="#f5e8d4" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+  </svg>
   <div class="rsvp-inner">
-    <div class="section-num" style="color:#ffffff;--line-color:var(--pink);font-family:'Architects Daughter',cursive">Let us know</div>
-    <h2 class="rsvp-h" style="font-family:'Architects Daughter',cursive">RSVP<br><em>by May 3</em></h2>
+    <div class="section-num" style="color:var(--tomato);--line-color:var(--tomato);font-family:'Architects Daughter',cursive">Let us know</div>
+    <h2 class="rsvp-h" style="font-family:'Architects Daughter',cursive;margin-bottom:40px;color:var(--yellow);">RSVP<br>by May 5</h2>
     <p class="rsvp-p">Please let us know you're coming — we'd love to plan the amount of food and drinks in advance.</p>
     <a href="https://forms.gle/B7Yd3C9sBxputuKk6" target="_blank" class="rsvp-btn">Send your RSVP</a>
   </div>
@@ -929,7 +1003,6 @@ footer {
 <!-- ░░ FOOTER ░░ -->
 <footer>
   <div class="footer-left">See you on May 9th ☀</div>
-  <div class="footer-right">Baby Boy · Arriving Mid-June 2026 · Lisbon</div>
 </footer>
 
 <!-- TWEAKS -->
